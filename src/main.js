@@ -7,7 +7,7 @@ const POLL_INTERVAL_MS = 2_000;
 const MAX_POLL_TIME_MS = 90_000;
 
 async function submitReport(url) {
-  const res = await fetch(`${API_BASE}/api/v1/reports/`, {
+  const res = await fetch(`${API_BASE}/api/v1/reports`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
