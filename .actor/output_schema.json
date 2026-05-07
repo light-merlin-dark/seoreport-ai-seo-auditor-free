@@ -1,0 +1,19 @@
+{
+  "actorOutputSchemaVersion": 1,
+  "title": "SEOReport.dev Free Actor Output",
+  "description": "SEO audit report with 0-100 scores across SEO, Security, and Performance domains. Free tier shows scores, summary, and top findings. Upgrade to the paid actor or seoreport.dev for full details.",
+  "properties": {
+    "reportDataset": {
+      "type": "string",
+      "title": "Report Results (Dataset)",
+      "description": "Full JSON report as a dataset item. Ideal for automation, bulk processing, and integrations.",
+      "template": "{{links.apiDefaultDatasetUrl}}/items"
+    },
+    "reportOutput": {
+      "type": "string",
+      "title": "Report Output (Key-Value Store)",
+      "description": "Direct access to the report JSON stored under the 'OUTPUT' key. Ideal for single-run API access.",
+      "template": "{{links.apiDefaultKeyValueStoreUrl}}/records/OUTPUT"
+    }
+  }
+}

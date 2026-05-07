@@ -5,6 +5,8 @@
   "description": "Official free actor from SEOReport.dev. Get instant 0-100 SEO, Security & Performance scores for any website. Built for agents, scheduling & bulk audits.",
   "version": "1.0.0",
   "input": "./input_schema.json",
+  "output": "./output_schema.json",
+  "datasetSchema": "./dataset_schema.json",
   "dockerfile": "./Dockerfile",
   "readme": "./README.md"
 }

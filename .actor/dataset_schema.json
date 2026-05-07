@@ -1,0 +1,133 @@
+{
+  "actorDatasetSchemaVersion": 1,
+  "title": "SEOReport.dev Free Actor Dataset Schema",
+  "description": "Schema for SEO audit report dataset items produced by the free actor. Contains scores, domain breakdowns, preview findings, and section summaries.",
+  "properties": {
+    "jobId": {
+      "type": "string",
+      "description": "Unique identifier for this report job"
+    },
+    "targetUrl": {
+      "type": "string",
+      "description": "The URL that was audited"
+    },
+    "status": {
+      "type": "string",
+      "description": "Job status: queued, running, completed, failed, dead_lettered, or cancelled"
+    },
+    "isSnapshotReady": {
+      "type": "boolean",
+      "description": "Whether the report snapshot is ready for presentation"
+    },
+    "entitlementState": {
+      "type": "string",
+      "description": "Access level: 'anonymous' for free actor, 'paid' for paid actor"
+    },
+    "score": {
+      "type": "object",
+      "description": "Overall and category scores",
+      "properties": {
+        "overall": { "type": "number", "description": "Overall SEO score from 0-100" },
+        "band": { "type": "string", "description": "Score band label (e.g., 'Excellent', 'Good', 'Needs Work')" },
+        "totalChecks": { "type": "number", "description": "Total number of checks performed" },
+        "passedChecks": { "type": "number", "description": "Number of checks that passed" },
+        "failedChecks": { "type": "number", "description": "Number of checks that failed" },
+        "warnChecks": { "type": "number", "description": "Number of checks with warnings" },
+        "failingCriticalChecks": { "type": "number", "description": "Number of critical checks that failed" },
+        "categoryScores": {
+          "type": "array",
+          "description": "Per-category score breakdown",
+          "items": {
+            "type": "object",
+            "properties": {
+              "category": { "type": "string", "description": "Category name" },
+              "score": { "type": "number", "description": "Category score 0-100" },
+              "checks": { "type": "number", "description": "Number of checks in category" },
+              "pass": { "type": "number" },
+              "fail": { "type": "number" },
+              "warn": { "type": "number" },
+              "info": { "type": "number" }
+            }
+          }
+        },
+        "domainScores": {
+          "type": "array",
+          "description": "Per-domain score breakdown (seo, performance, security, ai)",
+          "items": {
+            "type": "object",
+            "properties": {
+              "domain": { "type": "string", "description": "Domain identifier" },
+              "label": { "type": "string", "description": "Human-readable domain label" },
+              "score": { "type": "number", "description": "Domain score 0-100" },
+              "checks": { "type": "number" },
+              "pass": { "type": "number" },
+              "fail": { "type": "number" },
+              "warn": { "type": "number" },
+              "info": { "type": "number" }
+            }
+          }
+        }
+      }
+    },
+    "view": {
+      "type": "object",
+      "description": "Report view with section headlines and summaries",
+      "properties": {
+        "sections": {
+          "type": "array",
+          "description": "Array of report sections with headlines and summaries",
+          "items": {
+            "type": "object",
+            "properties": {
+              "key": { "type": "string", "description": "Section identifier" },
+              "visibility": { "type": "string", "description": "'free' or 'paid' visibility" },
+              "state": { "type": "string", "description": "Section state: placeholder, materializing, ready, or locked" },
+              "headline": { "type": "string", "description": "Section headline" },
+              "summary": { "type": "string", "description": "Section summary text" }
+            }
+          }
+        }
+      }
+    },
+    "preview": {
+      "type": "object",
+      "description": "Preview metadata for free tier",
+      "properties": {
+        "topFindingKeys": {
+          "type": "array",
+          "description": "Keys of top findings available in preview",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "paidUnlock": {
+      "type": "object",
+      "description": "Paid unlock status and locked sections",
+      "properties": {
+        "unlocked": { "type": "boolean", "description": "Whether paid content is unlocked" },
+        "lockedSectionKeys": {
+          "type": "array",
+          "description": "Sections that require payment to view",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "advancedPreview": {
+      "type": "object",
+      "description": "Preview of advanced report content",
+      "properties": {
+        "fixCount": { "type": "number", "description": "Number of recommended fixes" },
+        "findingCount": { "type": "number", "description": "Number of findings" },
+        "focusAreas": {
+          "type": "array",
+          "description": "Key focus areas for improvement",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "locale": {
+      "type": "string",
+      "description": "Report locale (e.g., 'en', 'es', 'de')"
+    }
+  }
+}
