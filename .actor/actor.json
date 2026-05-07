@@ -6,10 +6,5 @@
   "version": "1.0.0",
   "input": "./input_schema.json",
   "dockerfile": "./Dockerfile",
-  "readme": "./README.md",
-  "storages": {
-    "dataset": {
-      "actorSpecification": 1
-    }
-  }
+  "readme": "./README.md"
 }
