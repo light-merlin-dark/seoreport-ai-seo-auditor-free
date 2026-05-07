@@ -64,6 +64,9 @@ The actor returns a structured JSON report:
 
 This actor is **100% free** — you only pay Apify's standard compute usage.
 
+**Want the full report instantly?**
+→ Run our **Advanced Actor** on Apify Store — `$12` per run, full unlock with all findings, fix instructions, and priority ranking.
+
 **Want more?**
 - **$14** — one-off advanced PDF report with full findings, priority fix plan, and AI executive summary
 - **$19/mo+** — unlimited reports, white-label PDFs, priority queue, API/MCP access

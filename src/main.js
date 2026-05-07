@@ -98,7 +98,9 @@ console.log(`⏳ Report queued (jobId: ${jobId}). Polling for results...`);
 const report = await pollReport(jobId);
 
 console.log(`✅ Report complete — Score: ${report.score?.overall ?? '?'}/100`);
-console.log(`💡 Upgrade to advanced report: https://seoreport.dev/pricing`);
+console.log(`💡 Want the full unlocked report with all findings and fix instructions?`);
+console.log(`   Search "SEOReport.dev Advanced" on Apify Store — $12 per run, instant results.`);
+console.log(`   Or subscribe at https://seoreport.dev/pricing for unlimited reports + PDFs.`);
 
 // Push to Apify Dataset (for automation / CSV export)
 await Actor.pushData(report);
