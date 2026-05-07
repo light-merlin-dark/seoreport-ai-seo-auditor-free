@@ -1,0 +1,19 @@
+{
+  "name": "seoreport-ai-seo-auditor-free",
+  "version": "1.0.0",
+  "description": "Official free SEO report actor from SEOReport.dev — instant AI-powered SEO, security & performance audits.",
+  "type": "module",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "apify": "^3.3.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "license": "MIT",
+  "author": "SEOReport <ops@seoreport.dev>"
+}

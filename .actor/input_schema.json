@@ -1,0 +1,15 @@
+{
+  "title": "SEOReport.dev Free Report",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "url": {
+      "title": "Target URL or Domain",
+      "type": "string",
+      "description": "The website to analyze, e.g. https://example.com or example.com",
+      "editor": "textfield",
+      "prefill": "https://example.com"
+    }
+  },
+  "required": ["url"]
+}
