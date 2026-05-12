@@ -1,9 +1,11 @@
-# Apify Actor Strategy — Critical Analysis & Plan
+# Apify Actor Strategy — Historical Reference
 
 **Date:** 2026-05-07  
-**Status:** draft — awaiting approval  
+**Status:** ✅ IMPLEMENTED — This document is kept for historical reference. Current state is in the workspace root `README.md`.  
 **Author:** Kimi (synthesized from Grok conversation + project architecture review)  
 **Scope:** repo topology, auth contract, deployment model, actor shape, and launch sequence for SEOReport's Apify Store presence.
+
+> ⚠️ **Historical Document:** All phases described below are complete. The free actor and advanced actor are both published and operational. See workspace `README.md` for current state.
 
 ---
 
@@ -270,36 +272,36 @@ Set in Apify Console → Actor → Settings → Environment variables:
 
 ## 7. Launch Sequence
 
-### Phase 0: API Preparation (Blocked — Must Do First)
+### Phase 0: API Preparation ✅ COMPLETE
 
-- [ ] Implement `X-SEOReport-Actor-Token` auth lane in `seoreport-api`
-- [ ] Add actor token hash to `prod env` for API service
-- [ ] Add `source = "apify"` telemetry tag to report jobs
-- [ ] Deploy API with actor auth support
-- [ ] Generate actor token, store raw in 1Password/Bitwarden, store hash in prod env
+- [x] Implement `X-SEOReport-Actor-Token` auth lane in `seoreport-api`
+- [x] Add actor token hash to `prod env` for API service
+- [x] Add `source = "apify"` telemetry tag to report jobs
+- [x] Deploy API with actor auth support
+- [x] Generate actor token, store raw in 1Password/Bitwarden, store hash in prod env
 
-### Phase 1: Actor Repo (30 min)
+### Phase 1: Actor Repo ✅ COMPLETE
 
-- [ ] `gh repo create light-merlin-dark/seoreport-ai-seo-auditor-free --public --add-readme`
-- [ ] Scaffold `.actor/actor.json`, `src/main.js`, `package.json`, `README.md`
-- [ ] Push to GitHub
+- [x] `gh repo create light-merlin-dark/seoreport-ai-seo-auditor-free --public --add-readme`
+- [x] Scaffold `.actor/actor.json`, `src/main.js`, `package.json`, `README.md`
+- [x] Push to GitHub
 
-### Phase 2: Apify Setup (15 min)
+### Phase 2: Apify Setup ✅ COMPLETE
 
-- [ ] Apify Console → New Actor → Source = Git repository
-- [ ] Paste GitHub URL
-- [ ] Add secrets (`SEOREPORT_API_BASE_URL`, `SEOREPORT_ACTOR_TOKEN`)
-- [ ] Build & test with 3–5 real domains
+- [x] Apify Console → New Actor → Source = Git repository
+- [x] Paste GitHub URL
+- [x] Add secrets (`SEOREPORT_API_BASE_URL`, `SEOREPORT_ACTOR_TOKEN`)
+- [x] Build & test with 3–5 real domains
 
-### Phase 3: Store Listing (15 min)
+### Phase 3: Store Listing ✅ COMPLETE
 
-- [ ] Fill Publication tab (title, description, categories: SEO_TOOLS, AI, AUTOMATION)
-- [ ] Upload logo
-- [ ] Paste README.md as Store description
-- [ ] Enable MCP in Actor settings
-- [ ] Publish to Store
+- [x] Fill Publication tab (title, description, categories: SEO_TOOLS, AI, AUTOMATION)
+- [x] Upload logo
+- [x] Paste README.md as Store description
+- [x] Enable MCP in Actor settings
+- [x] Publish to Store
 
-### Phase 4: Funnel Wiring (15 min)
+### Phase 4: Funnel Wiring
 
 - [ ] Add banner on `seoreport.dev`: "Now on Apify for agents & automation"
 - [ ] Post on X (@EnchantedRobot)
@@ -342,15 +344,12 @@ Conversion path:
 Apify user runs free actor → sees score & findings → clicks upsell → lands on seoreport.dev → buys $14 PDF or subscribes
 ```
 
-### 9.3 Future: Paid Actor (Option B)
+### 9.3 Paid Actor (Advanced)
 
-After 30–60 days, consider a second actor:
-- `seoreport-ai-seo-auditor-advanced`
-- Pay per Event: $12.00 (user pays Apify, we net ~$9.60)
-- Returns full paid report + PDF download URL
-- Requires our API to support "actor-paid" entitlement path
-
-This is **explicitly out of scope for Phase 1**.
+✅ **IMPLEMENTED.** The advanced actor `seoreport-ai-seo-auditor-advanced` is published on the Apify Store with:
+- Pay per Event: $12.00 per run (we net ~$9.60)
+- Returns full unlocked report via paid actor token auth lane
+- Separate token pool from free actor for security isolation
 
 ---
 
@@ -369,7 +368,7 @@ This is **explicitly out of scope for Phase 1**.
 |----------|--------|------|-----------|
 | Repo location | `_dev/seoreport-apify/` sibling dir | 2026-05-07 | Avoids monorepo topology pollution |
 | GitHub account | `light-merlin-dark` personal | 2026-05-07 | Ship today, org later |
-| Actor count | 1 free actor only | 2026-05-07 | Matches free-tier product strategy |
+| Actor count | 2 actors (free + advanced) | 2026-05-07 | Free for discovery, paid for full unlock |
 | Auth mechanism | New `X-SEOReport-Actor-Token` | 2026-05-07 | No existing lane satisfies requirements |
 | Deploy method | Apify Console + GitHub | 2026-05-07 | Not a `prod-control` service |
 | Output format | Exact API JSON | 2026-05-07 | Keep actor thin, formatting in API |

@@ -1,4 +1,6 @@
-# Apify Actor Setup Guide — Field-by-Field
+# Apify Actor Setup Guide — Historical Reference
+
+> ⚠️ **Historical Document:** The free actor is published and operational. This guide documents the original field-by-field setup. Current state is in the workspace root `README.md`.
 
 This document maps every field on the Apify actor development page to what you should put in it. It distinguishes between **internal/technical names** (for URLs and code) and **marketing names** (for the Store).
 
@@ -159,11 +161,11 @@ Official free actor from SEOReport.dev. Get instant 0-100 SEO, Security & Perfor
 
 ## Post-Launch Checklist
 
-- [ ] Actor builds successfully in Apify Console
-- [ ] Test run with `https://example.com` returns JSON report
-- [ ] Dataset tab shows the report output
-- [ ] Publication tab is 100% filled
-- [ ] "Publish to Store" button is green
-- [ ] Click "Publish to Store"
+- [x] Actor builds successfully in Apify Console
+- [x] Test run with `https://example.com` returns JSON report
+- [x] Dataset tab shows the report output
+- [x] Publication tab is 100% filled
+- [x] "Publish to Store" button is green
+- [x] Click "Publish to Store"
 - [ ] Share Store URL on X (@EnchantedRobot)
 - [ ] Add banner on seoreport.dev: "Now on Apify for agents & automation"
