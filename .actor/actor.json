@@ -1,10 +1,11 @@
 {
   "actorSpecification": 1,
   "name": "seoreport-dev---free-ai-seo-performance-security-audit",
-  "title": "SEOReport.dev – Free AI SEO Auditor",
+  "title": "Get a free website SEO score",
   "description": "Official free actor from SEOReport.dev. Instant 0-100 SEO, security, and performance scores for any website.",
   "version": "0.1",
   "buildTag": "latest",
+  "categories": ["SEO_TOOLS", "AI", "MCP_SERVERS"],
   "dockerfile": "./Dockerfile",
   "readme": "./README.md",
   "input": "./input_schema.json",

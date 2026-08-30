@@ -1,80 +1,46 @@
-# SEOReport.dev – Free AI SEO Auditor | Website Audit, Scores & Agent Ready
+# Get a free website SEO score
 
-**Official free actor** from [SEOReport.dev](https://seoreport.dev). Run instant AI-powered SEO, Security, and Performance audits on any website. Same engine as the web app. Same 0–100 scores. Built for automation.
+Official free Actor from [SEOReport.dev](https://seoreport.dev). Same engine as the website. One URL in, flattened scores out. Built for automation and MCP.
 
 ## What you get (free)
 
-- **Instant 0–100 overall score** + 4 domain scores (SEO, AI Readiness, Performance, Security)
-- **Concrete findings with evidence** — actual header values, status codes, affected URLs
-- **GEO analysis, on-page SEO, structured data, security headers, Core Web Vitals, crawlability**
-- **Full JSON output** pushed to Apify Dataset for automation, CSV export, and chaining
-- **MCP-ready** — agents can call it natively
+- Instant 0–100 overall score plus SEO, AI readiness, performance, and security
+- The same free findings the hosted report shows
+- One dataset row per run (`overview` view) plus the full JSON on the `OUTPUT` key
 
-Every report includes the same footer CTAs as the website:
-- **"Purchase advanced report – $14.00"** → full ~18-page PDF + executive summary + prioritized fixes
-- **"Need help fixing these issues? Contact us"** → hands-on SEO services
-
-## Perfect for
-
-- 🤖 **AI agents & MCP workflows** — structured JSON output, no parsing required
-- 📅 **Scheduled monitoring** — run daily/weekly and diff scores over time
-- 🔗 **Bulk audits** — chain with other Apify actors (crawler, sitemap, etc.)
-- 📊 **Data pipelines** — Dataset export gives you every field in queryable form
+This is the trial. The [advanced Actor](https://apify.com/seoreport.dev/seoreport-dev-ai-seo-auditor-advanced) unlocks all 139 checks, the priority fix plan, and the AI executive narrative at **$12 per report**.
 
 ## Input
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| `url` | string | ✅ | Website URL or domain to audit |
+| `url` | string | yes | Website URL or domain. Prefill is `https://example.com`. |
 
-## Output
-
-The actor returns a structured JSON report:
+## Output (dataset `overview`)
 
 ```json
 {
-  "jobId": "abc-123",
   "targetUrl": "https://example.com",
-  "score": {
-    "overall": 87,
-    "domainScores": {
-      "seo": 92,
-      "ai": 78,
-      "performance": 85,
-      "security": 95
-    }
-  },
-  "view": {
-    "sections": [
-      { "key": "hero_summary", "visibility": "free", ... },
-      { "key": "top_findings", "visibility": "free", ... },
-      { "key": "fix_priorities", "visibility": "paid", ... }
-    ]
-  }
+  "jobId": "abc-123",
+  "overallScore": 87,
+  "seoScore": 92,
+  "aiScore": 78,
+  "performanceScore": 85,
+  "securityScore": 95,
+  "paidUnlocked": false
 }
 ```
 
-**Key fields:**
-- `score.overall` — 0-100 overall grade
-- `score.domainScores` — per-category breakdown
-- `view.sections` — report sections with `visibility: "free" | "paid"`
-- `paidUnlock` — metadata for advanced report upgrade
+The full report JSON is stored on the run's `OUTPUT` key-value record. Dataset rows stay flattened so Store testers and MCP callers see scores without parsing nested objects.
 
 ## Pricing
 
-This actor is **100% free** — you only pay Apify's standard compute usage.
+This Actor is free. You only pay Apify compute.
 
-**Want the full report instantly?**
-→ Run our **Advanced Actor** on Apify Store — `$12` per run, full unlock with all findings, fix instructions, and priority ranking.
-
-**Want more?**
-- **$14** — one-off advanced PDF report with full findings, priority fix plan, and AI executive summary
-- **$19/mo+** — unlimited reports, white-label PDFs, priority queue, API/MCP access
-
-→ [seoreport.dev/pricing](https://seoreport.dev/pricing)
+Want the unlocked report? Run **SEOReport.dev AI SEO Auditor Advanced** — **$12 per report**. Subscribe at [seoreport.dev/pricing](https://seoreport.dev/pricing) for unlimited hosted reports.
 
 ## Contact
 
-- **Email:** ops@seoreport.dev
-- **X:** [@EnchantedRobot](https://x.com/EnchantedRobot)
-- **Website:** [seoreport.dev](https://seoreport.dev)
+- Email: ops@seoreport.dev
+- X: [@EnchantedRobot](https://x.com/EnchantedRobot)
+- Website: [seoreport.dev](https://seoreport.dev)
