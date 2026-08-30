@@ -1,12 +1,14 @@
 {
   "actorSpecification": 1,
-  "name": "seoreport-ai-seo-auditor-free",
-  "title": "SEOReport.dev – Free AI SEO Auditor | Website Audit, Scores & Agent Ready",
-  "description": "Official free actor from SEOReport.dev. Get instant 0-100 SEO, Security & Performance scores for any website. Built for agents, scheduling & bulk audits.",
-  "version": "1.0.0",
-  "input": "./input_schema.json",
-  "output": "./output_schema.json",
-  "datasetSchema": "./dataset_schema.json",
+  "name": "seoreport-dev---free-ai-seo-performance-security-audit",
+  "title": "SEOReport.dev – Free AI SEO Auditor",
+  "description": "Official free actor from SEOReport.dev. Instant 0-100 SEO, security, and performance scores for any website.",
+  "version": "0.1",
+  "buildTag": "latest",
   "dockerfile": "./Dockerfile",
-  "readme": "./README.md"
+  "readme": "./README.md",
+  "input": "./input_schema.json",
+  "storages": {
+    "dataset": "./dataset_schema.json"
+  }
 }

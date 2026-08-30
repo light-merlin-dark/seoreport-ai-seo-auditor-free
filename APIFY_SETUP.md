@@ -63,7 +63,7 @@ https://github.com/light-merlin-dark/seoreport-ai-seo-auditor-free.git
 | Variable | Value | Notes |
 |----------|-------|-------|
 | `SEOREPORT_API_BASE_URL` | `https://seoreport.dev` | Production API endpoint |
-| `SEOREPORT_ACTOR_TOKEN` | `apify-actor-e4f1a040-c97c-4c7f-bdc4-01e9428bd188` | From 1Password / Kimi handoff |
+| `SEOREPORT_ACTOR_TOKEN` | *(Apify Console secret; never commit)* | From Secure Control / Console env |
 
 **Critical:** Never commit the raw token to GitHub. It lives only in Apify secrets.
 
