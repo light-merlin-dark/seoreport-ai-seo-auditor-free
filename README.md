@@ -37,7 +37,7 @@ The full report JSON is stored on the run's `OUTPUT` key-value record. Dataset r
 
 This Actor is free. You only pay Apify compute.
 
-Want the unlocked report? Run **SEOReport.dev AI SEO Auditor Advanced** — **$12 per report**. Subscribe at [seoreport.dev/pricing](https://seoreport.dev/pricing) for unlimited hosted reports.
+Want the unlocked report? Run **SEOReport.dev AI SEO Auditor Advanced** — **$12 per report**. The Store headline “$12,000 / 1,000” is the same $12, shown per thousand events. Subscribe at [seoreport.dev/pricing](https://seoreport.dev/pricing) for unlimited hosted reports.
 
 ## Contact
 
